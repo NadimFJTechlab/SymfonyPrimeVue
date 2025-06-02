@@ -44,7 +44,8 @@ services:
         MARIADB_ROOT_PASSWORD: ${MARIADB_ROOT_PASSWORD:-db_root_passwd}
         # You should definitely change the password in production
         MARIADB_PASSWORD: ${MARIADB_PASSWORD:-db_passwd}
-        MARIADB_USER: ${MARIADB_USER:-db_user}      
+        MARIADB_USER: ${MARIADB_USER:-db_user}
+        TZ: "Europe/Paris"
     healthcheck:
       test: ["CMD", "mariadb-admin" ,"ping", "-h", "localhost", "-u", "${MARIADB_USER:-db_user}", "-p${MARIADB_PASSWORD:-db_passwd}"]
       timeout: 5s
