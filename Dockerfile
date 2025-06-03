@@ -15,6 +15,8 @@ WORKDIR /app
 
 VOLUME /app/var/
 
+RUN curl -1sLf 'https://dl.cloudsmith.io/public/symfony/stable/setup.deb.sh' | bash
+
 # persistent / runtime deps
 # hadolint ignore=DL3008
 RUN apt-get update && apt-get install -y --no-install-recommends \
@@ -22,6 +24,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 	file \
 	gettext \
 	git \
+    symfony-cli \
 	&& rm -rf /var/lib/apt/lists/*
 
 RUN set -eux; \
