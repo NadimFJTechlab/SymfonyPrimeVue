@@ -1,0 +1,9 @@
+/* You can add global styles to this file, and also import other style files */
+@use '@fontsource/space-mono' as space-mono;
+@use '@fontsource/space-mono/400.css' as space-mono-regular;
+@use '@fontsource/space-mono/400-italic.css' as space-mono-italic;
+@use 'primeicons/primeicons.css' as primeicons;
+
+@use './tailwind.css';
+@use './layout/layout.scss';
+@use './demo/demo.scss';
